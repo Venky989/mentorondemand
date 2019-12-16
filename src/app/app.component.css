@@ -1,0 +1,42 @@
+/* include stylesheet for truYum */
+.material-icons.md-36 {
+	font-size: 35px;
+	line-height: 1.5;
+	vertical-align: middle;
+}
+
+.material-icons.other_icon {
+	line-height: 1.75;
+	vertical-align: middle;
+}
+
+.navbar_top {
+	background-color: rgb(25, 201, 148);
+	width: 100%;
+	margin:0px;
+}
+
+.navbar_bottom {
+	background-color: rgb(25, 201, 148);
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
+.badge-primary.delivery_badge {
+	vertical-align: super;
+}
+
+.delete-icon {
+	text-align: right;
+}
+
+.signup-btn {
+	background-color:rgb(25, 201, 148);
+	color: white;
+}
+
+.search-bar {
+	background-image:
+		url("https://image.freepik.com/free-vector/glowing-search-radar-black-background_1284-18879.jpg");
+}

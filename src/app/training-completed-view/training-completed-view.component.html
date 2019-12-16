@@ -1,0 +1,39 @@
+<div class="container-fluid mt-5 mx-5 mb-5">
+
+     
+    <div>
+        <div class="col-xl-11 mt-5 mx-8 mb-5">
+            <h2> Completed Courses</h2>
+           
+                <table class="table mt-2">
+                    <tr>
+                        <th >TECHNOLGY</th>
+                        <th >MENTOR NAME </th>
+                        <th >CONTACT</th>
+                        <th >EMAIL</th>
+                       
+                        <th >Current Status</th>
+                       
+    
+                    </tr>
+                    <tr *ngFor="let user of trainees">
+                        <td >{{user.techId.skillName}}</td>
+                        <td >{{user.mentorId.userID}}</td>
+                        <td >{{user.mentorId.contactNo}}</td>
+                        <td >{{user.mentorId.email}}</td>
+                        <td >
+    
+                                <div  *ngIf="user.proposalStatus=='COMPLETED'">
+                                        <div>
+                                                <span class="badge badge-pill badge-success">Training Completed</span><br>
+                                            </div>
+
+                                        </div>  
+                    
+                            </td>
+                    </tr>
+                </table>
+            </div>
+       
+    </div>
+</div> 

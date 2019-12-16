@@ -1,0 +1,166 @@
+
+<div class="p-3 w-75 mx-auto alert alert-danger mb-5 mt-4" *ngIf="error!=''">{{error}} </div>
+
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-3 col-sm-12 mb-5 mt-4" *ngFor="let list of mentorList">
+    <div class="card mx-2">
+      <div class="mt-2 mx-auto">
+        <img class="card-img-top" src={{list.skillId.image}} width="50" height="100" alt="Card image">
+      </div>
+        <div class="card-body my-2 mx-3">
+          <div class="row">
+              <h5 class="card-title">Course Name: {{list.skillId.skillName}}</h5>
+          </div>
+          
+          <div class="row mt-2">
+              <i class="material-icons other_icon"> event </i> &nbsp; Duration :
+              &nbsp;{{list.skillId.duration}}
+
+          </div>
+          <div class="row mt-2">
+              <i class="material-icons other_icon"> person </i> &nbsp; Name of the Mentor:  <br>
+              &nbsp;&nbsp; {{list.mentorId.userID}} 
+
+          </div>
+          <div class="row mt-2">
+           <i class="material-icons other_icon"> watch_later </i> &nbsp; {{list.experience}} years total <br>  &nbsp; experience
+
+          </div>
+          <div class="row mt-2">
+              <i class="material-icons other_icon"> watch_later </i> &nbsp; {{list.mentorId.yearsOfExperience}} years experience <br>&nbsp;in this technology
+
+          </div>
+          <div class="row mt-2">
+              <i class="material-icons other_icon"> dialpad </i> &nbsp; Contact no: <br>
+              &nbsp; {{list.mentorId.contactNo}}
+
+          </div>
+          <div class="row mt-2">
+              <i class="material-icons other_icon"> chat </i> &nbsp; Email Id: <br>
+              &nbsp; &nbsp;{{list.mentorId.email}}
+
+          </div>
+          <div class="row mt-2 "  *ngIf="this.authService.loggedIn">
+            <button type="button" class="btn btn-primary btn-lg btn-block text-light" (click)="book(list.mentorId.id,this.authService.username,list.skillId.id)">Book</button>
+              </div>
+
+        </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!--  <b>Rating : </b>{{sk.rating}}<br>
+   <b>Years Of Experience : </b>{{sk.experience}}<br>
+    
+      <b>Trainings Deliverd : </b>{{sk.trainings}}<br>
+    
+  
+     <b>Facilities Offered: </b>{{sk.facilities}}<br>
+ 
+      <b>Mentor Name: </b>{{sk.mentorId.userID}}<br>
+
+      <b>Mentor Contact :</b>{{sk.mentorId.contactNo}}<br>
+
+      <b>LinkedInUrl : </b>{{sk.mentorId.linkedInUrl}}<br>
+
+      <b>Email : </b>{{sk.mentorId.email}}<br>
+
+      <b>Years Of Experience : </b>{{sk.mentorId.yearsOfExperience}}-->
+
+
+
+
+<!-- <div class="col-lg-3 ">
+
+  <div *ngFor="let list of mentorList">
+    <div class="card my-5">
+      <img class="card-img-top" src={{item.image}} alt="Card image">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-8">
+            <h4 class="card-title">{{list.skillId.skillName}}</h4>
+          </div>
+          <div class="ml-auto">{{item.price|currency:'INR'}}</div>
+          <div class="col-9">
+            <div class="card-text">
+              <div *ngIf="isAdmin">
+                <span class="badge badge-success delivery_badge" *ngIf="item.active">Active</span>
+                <span class="badge badge-danger delivery_badge" *ngIf="!item.active">Inactive</span>
+                {{item.category}}
+              </div>
+
+            </div>
+          </div>
+          <div class="ml-auto" *ngIf="item.freeDelivery">
+            <i class="material-icons icon-blue">local_shipping</i> <span
+              class="badge badge-info delivery_badge">Free</span>
+          </div>
+        </div>
+
+        <div *ngIf="this.menuItemService.addedToCart && this.menuItemService.cartAddedId==item.id">
+          <div class="alert alert-success alert-dismissible fade show alert-msg" role="alert">
+
+
+            Item added to cart successfully.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="ml-auto" *ngIf="!isAdmin">
+            <button type="button" class="btn btn-orange" (click)="addToCartClicked.emit(item.id)">
+              <i class="material-icons other_icon"> add_shopping_cart </i> Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="row" *ngIf="isAdmin">
+          <div class="col-5">
+            <i class="material-icons other_icon">access_time</i> Launch
+            <div>{{item.dateOfLaunch | date: 'dd/MM/yyyy'}}</div>
+          </div>
+          <div class="ml-auto">
+             <button [routerLink]="['/edit-food-item',item.id]" type="button" class="btn btn-orange">
+            <i class="material-icons other_icon"> edit </i> Edit
+          </button> 
+            <button type="button" class="btn btn-orange" (click)="onEditClick(item.id)">
+              <i class="material-icons other_icon"> edit </i> Edit
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="row">
+    <div class="col-sm-3" *ngFor="let sk of mentorList">
+      <div class="card mx-auto">
+        <div class="card-body">
+        <b>Rating : </b>{{sk.rating}}<br>
+   <b>Years Of Experience : </b>{{sk.experience}}<br>
+    
+      <b>Trainings Deliverd : </b>{{sk.trainings}}<br>
+    
+  
+     <b>Facilities Offered: </b>{{sk.facilities}}<br>
+ 
+      <b>Mentor Name: </b>{{sk.mentorId.userID}}<br>
+
+      <b>Mentor Contact :</b>{{sk.mentorId.contactNo}}<br>
+
+      <b>LinkedInUrl : </b>{{sk.mentorId.linkedInUrl}}<br>
+
+      <b>Email : </b>{{sk.mentorId.email}}<br>
+
+      <b>Years Of Experience : </b>{{sk.mentorId.yearsOfExperience}}
+</div>
+
+<div *ngIf="this.authService.loggedIn">
+  <button type="button" class="btn btn-dark text-light" (click)="book(sk.mentorId.id,this.authService.username,sk.skillId.id)">Book</button>
+    </div></div> </div></div>
+ -->

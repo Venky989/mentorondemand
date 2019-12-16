@@ -1,0 +1,23 @@
+<div class="search-bar">
+    <div class="row">
+      <div class="col-xl-11 mt-5 ml-5 mr-5">
+        <h1 class="text-black">Find Mentor</h1>
+      </div>
+      <div class="col-xl-11 mt-5 ml-5 mr-5">
+        <form>
+          <div class="input-group md-form form-sm form-1 pl-0">
+            <div class="input-group-prepend">
+              <span class="input-group-text purple lighten-3 mb-5" id="basic-text1"><i
+                  class="material-icons">search</i></span>
+            </div>
+            <input type="search" class="form-control" name="search-bar" [(ngModel)]="nameSearch" (input)="search()"
+              placeholder="Search Mentors">
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </div>
+  <app-skill-info [mentorList]="mentorList"></app-skill-info>
+      <br>
+      <br>

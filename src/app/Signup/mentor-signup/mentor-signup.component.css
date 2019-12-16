@@ -1,0 +1,10 @@
+.button-color{
+    background-color: rgb(202, 22, 46);
+}
+.button-dark{
+    background-color: rgb(121, 171, 94);
+}
+.back {
+	background-image:
+		url("https://images.unsplash.com/photo-1576000613930-4c17d9948918?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}

@@ -1,0 +1,66 @@
+<div class="container-fluid mt-5 mx-5 mb-5">
+      
+    <div>
+        <div class="col-xl-11 mt-5 mx-8 mb-5">
+            <h2> Current Courses</h2>
+           
+                <table class="table mt-2">
+                    <tr>
+                        <th>TECHNOLOGY</th>
+                        <th>MENTOR NAME </th>
+                        <th>CONTACT</th>
+                        <th>EMAIL</th>
+                       
+                        <th>Current Status</th>
+                       
+    
+                    </tr>
+                    <tr *ngFor="let user of trainees">
+                        <td>{{user.techId.skillName}}</td>
+                        <td>{{user.mentorId.userID}}</td>
+                        <td>{{user.mentorId.contactNo}}</td>
+                        <td>{{user.mentorId.email}}</td>
+                        <td>
+                       <div  *ngIf="user.proposalStatus=='PENDING'">
+                           <div>
+                            <span class="badge badge-secondary">Waiting for Approval</span><br>
+                        </div>
+                       
+                        </div>    
+                        
+                        <div  *ngIf="user.proposalStatus=='APPROVED'">
+                                <div>
+                                        <span class="badge badge-info">Inprogress</span>
+                                        &nbsp;
+                                                <span class="badge badge-pill badge-danger">Not Paid</span>
+                                    </div>
+                                    <div class="text-right">
+                                <button type="submit" class="badge-success"  (click)="paynow(user.id)">PayNow</button>
+                            </div>
+                               
+                                </div>  
+
+                                <div  *ngIf="user.proposalStatus=='APPROVEDPAID'">
+                                        <div>
+                                                <span class="badge badge-secondary">Inprogress</span> &nbsp;
+                                                <span class="badge badge-pill badge-success">Paid</span>
+                                            </div>
+                                           
+                                       
+                                        </div>  
+    
+                                <div  *ngIf="user.proposalStatus=='COMPLETED'">
+                                        <div>
+                                                <span class="badge badge-pill badge-success">Training Completed</span><br>
+                                            </div>
+                                           
+                                       
+                                        </div>  
+                    
+                            </td>
+                    </tr>
+                </table>
+            </div>
+       
+    </div>
+</div> 
